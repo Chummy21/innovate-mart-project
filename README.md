@@ -83,4 +83,11 @@ The implementation covers:
 
 ---
 
+## 🌐 Step 2: Deploying the Retail Store Application
+- Applied the `kubernetes.yaml` file to deploy the microservices.  
+- Retrieved the **LoadBalancer URL** with:  
+  ```bash
+ kubectl get svc
+Copied the URL and confirmed the UI was accessible.
+
 
