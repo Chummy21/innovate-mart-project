@@ -130,3 +130,38 @@ The workflow handles:
   ![Screenshot](screenshot/pipeline3.jpg)
   ![Screenshot](screenshot/secret-key.jpg)
 
+##   🔑 Step 4: Developer Access & Manual Validation
+
+- After deployment, I manually validated the setup using the read-only IAM user created for the instructor.
+
+Validation results:
+
+✅ Able to list pods, view logs, and check services.
+
+❌ Unable to create, delete, or modify resources (as expected).
+
+- This confirmed that IAM policies and RBAC were correctly configured to enforce least-privilege access.
+
+- Verified node groups and access entries:
+
+![Screenshot](screenshot/amazonekscluster.png)
+
+## ✅ Verification
+
+- EKS cluster successfully provisioned with Terraform.
+
+- Retail Store Application deployed and accessible via AWS LoadBalancer URL.
+
+- CI/CD pipeline validated through GitHub Actions runs.
+
+- Read-only IAM developer user tested and confirmed with limited access.
+
+##  📖 Lessons Learned
+
+- Gained hands-on experience provisioning EKS clusters and networking resources using Terraform.
+
+- Learned how to deploy and manage microservices using Kubernetes manifests.
+
+- Automated the infrastructure workflow with GitHub Actions CI/CD.
+
+- Applied the principle of least privilege by assigning appropriate IAM roles and users.
