@@ -84,7 +84,15 @@ The implementation covers:
 ---
 
 ## 🌐 Step 2: Deploying the Retail Store Application
-- Applied the `kubernetes.yaml` file to deploy the microservices.  
+
+- Installed and configured kubectl to connect with the EKS cluster.
+
+- Applied the `kubernetes.yaml` file to deploy all the microservices.
+
+- Verified deployment — all pods are in Running state ✅ (healthy cluster).
+
+- The UI service is exposed as a LoadBalancer, and AWS automatically provisioned an Elastic Load Balancer (ELB) to make the application accessible externally.
+ 
 
 - ## Kubernetes Services
 
@@ -92,4 +100,28 @@ To check the services in my cluster, I ran:
 
 ```bash
 kubectl get svc
+
+ui   LoadBalancer   172.20.99.37   aadfff0a2b7434dab89ee4f2d36a6f64-17783841.us-east-1.elb.amazonaws.com   80:30251/TCP   2m50s
+
+``` 
+
+Copied the URL and confirmed the UI was accessible.
+
+LoadBalancer URL:[http://aadfff0a2b7434dab89ee4f2d36a6f64-17783841.us-east-1.elb.amazonaws.com](http://aadfff0a2b7434dab89ee4f2d36a6f64-17783841.us-east-1.elb.amazonaws.com)
+![Screenshot](screenshot/loadbalancer.png)
+
+
+⚙️ Step 3: CI/CD Automation
+
+Created a GitHub Actions workflow under .github/workflows to automate the Terraform process.
+
+Defined steps for:
+
+Initializing Terraform
+
+Running terraform plan for feature branches
+
+Running terraform apply for the main branch
+
+Using GitHub Secrets to manage AWS credentials securely
 
