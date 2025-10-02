@@ -21,3 +21,4 @@ The implementation covers:
 ## 🚀 Step 1: Provisioning Infrastructure with Terraform
 1. Created a **VPC** and stored the variables in `terraform.tfvars` with all dependencies like route tables, subnets, and gateways attached.
 ![Screenshot](screenshot/image0.png)
+![Screenshot](screenshot/terraform.tfvars.png) 
