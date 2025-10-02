@@ -111,17 +111,22 @@ LoadBalancer URL:[http://aadfff0a2b7434dab89ee4f2d36a6f64-17783841.us-east-1.elb
 ![Screenshot](screenshot/loadbalancer.png)
 
 
-⚙️ Step 3: CI/CD Automation
+##  ⚙️ Step 3: CI/CD Automation
 
-Created a GitHub Actions workflow under .github/workflows to automate the Terraform process.
+To ensure repeatable and automated deployments, a GitHub Actions workflow was set up under .github/workflows.
 
-Defined steps for:
+The workflow handles:
 
-Initializing Terraform
+- Terraform Initialization → Prepares the working directory with Terraform plugins and backend configuration.
 
-Running terraform plan for feature branches
+- Terraform Plan (Feature Branches) → Runs terraform plan when code is pushed to non-main branches, helping preview infrastructure changes.
 
-Running terraform apply for the main branch
+- Terraform Apply (Main Branch) → Automatically applies changes to AWS when changes are merged into main.
 
-Using GitHub Secrets to manage AWS credentials securely
+- Secure AWS Credentials → GitHub Secrets were used to store and inject AWS Access Keys, ensuring credentials are not hard-coded.
+
+  ![Screenshot](screenshot/pipeline1.jpg)
+  ![Screenshot](screenshot/pipeline2.jpg)
+  ![Screenshot](screenshot/pipeline3.jpg)
+  ![Screenshot](screenshot/secret-key.jpg)
 
