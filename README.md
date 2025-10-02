@@ -77,6 +77,10 @@ The implementation covers:
    - Read-Only Developer User – An IAM user with restricted access (view-only) to the cluster, following the principle of least privilege. This ensures developers can inspect resources        without making changes.
    
      ![Screenshot](screenshot/iam.tf1.png)  
-     ![Screenshot](screenshot/iam.tf1.png)  
+     ![Screenshot](screenshot/iam.tf1.png)
+     IAM Console
+     ![Screenshot](screenshot/iam-console.png)
 
 ---
+
+
